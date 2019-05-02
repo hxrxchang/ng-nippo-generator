@@ -15,7 +15,6 @@ describe('DisplayReportComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DisplayReportComponent);
     component = fixture.componentInstance;
-    component.reportText = '# this is h1 text';
     fixture.detectChanges();
   });
 
@@ -23,8 +22,17 @@ describe('DisplayReportComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call ngOnChange()', () => {
-    component.ngOnChanges();
-    expect(component.markedText).toContain('<h1 id="this-is-h1-text">this is h1 text</h1>');
+  describe('should call ngOnChange()', () => {
+    it('when reportText is not empty string', () => {
+      component.reportText = '# this is h1 text';
+      component.ngOnChanges();
+      expect(component.markedText).toContain('<h1 id="this-is-h1-text">this is h1 text</h1>');
+    });
+
+    it('when reportText is empty', () => {
+      component.reportText = '';
+      component.ngOnChanges();
+      expect(component.markedText).toEqual('');
+    });
   });
 });

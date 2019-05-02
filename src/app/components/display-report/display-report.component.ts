@@ -19,6 +19,8 @@ export class DisplayReportComponent implements OnInit, OnChanges {
   ngOnChanges() {
     if (this.reportText) {
       this.markedText = marked(this.reportText);
+    } else {
+      this.markedText = '';
     }
   }
 }
