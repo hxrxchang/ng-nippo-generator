@@ -10,9 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UploadComponent } from './pages/upload/upload.component';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { DisplayReportComponent } from './components/display-report/display-report.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, UploadComponent, UploadFormComponent, DisplayReportComponent],
+  declarations: [AppComponent, UploadComponent, UploadFormComponent, DisplayReportComponent, HeaderComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
