@@ -9,6 +9,8 @@ import { FormGroup } from '@angular/forms';
 export class UploadFormComponent implements OnInit {
   @Input()
   uploadReportFormGroup: FormGroup;
+  @Input()
+  reportTemplate: string;
 
   constructor() {}
 
