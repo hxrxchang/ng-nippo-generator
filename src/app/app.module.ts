@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
@@ -11,7 +12,7 @@ import { UploadFormComponent } from './components/upload-form/upload-form.compon
 
 @NgModule({
   declarations: [AppComponent, UploadComponent, UploadFormComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

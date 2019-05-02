@@ -1,3 +1,5 @@
-<p>
-  upload-form works!
-</p>
+<form [formGroup]="uploadReportFormGroup">
+  <mat-form-field>
+    <textarea matInput formControlName="reportText"></textarea>
+  </mat-form-field>
+</form>
