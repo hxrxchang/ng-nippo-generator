@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import * as marked from 'marked';
 
 @Component({
   selector: 'app-display-report',
@@ -9,9 +10,15 @@ export class DisplayReportComponent implements OnInit, OnChanges {
   @Input()
   reportText: string;
 
+  markedText = '';
+
   constructor() {}
 
   ngOnInit() {}
 
-  ngOnChanges() {}
+  ngOnChanges() {
+    if (this.reportText) {
+      this.markedText = marked(this.reportText);
+    }
+  }
 }
