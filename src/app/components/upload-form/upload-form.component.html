@@ -1,5 +1,11 @@
 <form [formGroup]="uploadReportFormGroup">
-  <mat-form-field>
-    <textarea matInput formControlName="reportText"></textarea>
+  <mat-form-field class="form-field">
+    <textarea
+      matInput
+      placeholder="# Input with Markdown"
+      formControlName="reportText"
+      matTextareaAutosize
+      matAutosizeMinRows="3"
+    ></textarea>
   </mat-form-field>
 </form>

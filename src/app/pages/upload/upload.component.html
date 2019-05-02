@@ -1,2 +1,4 @@
-<app-upload-form [uploadReportFormGroup]="uploadReportFormGroup"></app-upload-form>
-<app-display-report [reportText]="uploadReportFormGroup.value.reportText"></app-display-report>
+<div class="wrapper">
+  <app-upload-form class="item form" [uploadReportFormGroup]="uploadReportFormGroup"></app-upload-form>
+  <app-display-report class="item desplay-report" [reportText]="uploadReportFormGroup.value.reportText"></app-display-report>
+</div>
