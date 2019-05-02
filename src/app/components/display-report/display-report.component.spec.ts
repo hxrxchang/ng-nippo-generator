@@ -29,8 +29,18 @@ describe('DisplayReportComponent', () => {
       expect(component.markedText).toContain('<h1 id="this-is-h1-text">this is h1 text</h1>');
     });
 
-    it('when reportText is empty', () => {
+    it('when reportText is empty and HTML is not rendered', () => {
       component.reportText = '';
+      component.isFirstRenderHTML = true;
+      component.ngOnChanges();
+      expect(component.markedText).toContain(
+        '<h1 id="お気持ち">お気持ち</h1>\n<h1 id="今日やったこと">今日やったこと</h1>\n<h1 id="明日次回やること">明日(次回)やること</h1>',
+      );
+    });
+
+    it('when reportText is empty and HTML is already rendered', () => {
+      component.reportText = '';
+      component.isFirstRenderHTML = false;
       component.ngOnChanges();
       expect(component.markedText).toEqual('');
     });

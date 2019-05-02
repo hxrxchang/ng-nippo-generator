@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import * as marked from 'marked';
+import { reportTemplate } from './../../domains/report-domain';
 
 @Component({
   selector: 'app-display-report',
@@ -12,6 +13,8 @@ export class DisplayReportComponent implements OnInit, OnChanges {
 
   markedText = '';
 
+  isFirstRenderHTML = true;
+
   constructor() {}
 
   ngOnInit() {}
@@ -19,6 +22,9 @@ export class DisplayReportComponent implements OnInit, OnChanges {
   ngOnChanges() {
     if (this.reportText) {
       this.markedText = marked(this.reportText);
+      this.isFirstRenderHTML = false;
+    } else if (this.isFirstRenderHTML) {
+      this.markedText = marked(reportTemplate);
     } else {
       this.markedText = '';
     }
