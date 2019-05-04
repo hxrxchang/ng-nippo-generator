@@ -14,5 +14,7 @@ export class UploadFormComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.uploadReportFormGroup.controls.reportText.setValue(this.reportTemplate);
+  }
 }

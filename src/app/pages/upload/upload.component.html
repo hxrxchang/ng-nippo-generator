@@ -3,7 +3,13 @@
   <app-display-report class="item desplay-report" [reportText]="uploadReportFormGroup.value.reportText"></app-display-report>
 </div>
 <div class="action-area">
-  <button class="upload-button" mat-raised-button color="primary" [disabled]="uploadReportFormGroup.invalid">
+  <button
+    class="upload-button"
+    mat-raised-button
+    color="primary"
+    [disabled]="uploadReportFormGroup.invalid"
+    (click)="onClickedUploadButton()"
+  >
     <mat-icon>create</mat-icon>Post
   </button>
 </div>

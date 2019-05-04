@@ -1,18 +1,18 @@
-import { UploadPostUsecase } from './upload-post-usecase';
+import { UploadReportRepository } from './upload-report-repository';
 import { TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('UploadPostUsecase', () => {
-  let usecase: UploadPostUsecase;
+describe('UploadReportRepository', () => {
+  let repository: UploadReportRepository;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
     });
-    usecase = TestBed.get(UploadPostUsecase);
+    repository = TestBed.get(UploadReportRepository);
   });
 
   it('should create an instance', () => {
-    expect(usecase).toBeTruthy();
+    expect(repository).toBeTruthy();
   });
 });
