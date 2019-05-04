@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { makeDatePath } from '../domains/report-domain';
-import { esaApiEndPoint, teamName, authorName, tokens } from 'credential';
+import { credentials } from 'credential';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class UploadReportRepository {
   postToEsa(markdown: string): Observable<any> {
     const esaPostBody = {
       post: {
-        name: authorName,
+        name: credentials.esaAuthorName,
         body_md: markdown,
         category: `日報/${makeDatePath()}`,
         wip: false,
@@ -24,15 +24,15 @@ export class UploadReportRepository {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${tokens.esaToken}`,
+        Authorization: `Bearer ${credentials.esaToken}`,
       }),
     };
 
-    return this.http.post(`${esaApiEndPoint}/v1/teams/${teamName}/posts`, esaPostBody, httpOptions);
+    return this.http.post(`${credentials.esaApiEndPoint}/v1/teams/${credentials.esaTeamName}/posts`, esaPostBody, httpOptions);
   }
 
   postToSlack(markdown: string): Observable<any> {
     const arrangedMarkdown = '```\n\n' + markdown + '\n\n```';
-    return this.http.post(tokens.slackWebHookUrl, { text: arrangedMarkdown }, { responseType: 'text' });
+    return this.http.post(credentials.slackWebHookUrl, { text: arrangedMarkdown }, { responseType: 'text' });
   }
 }
