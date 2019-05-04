@@ -27,7 +27,6 @@ export class UploadReportRepository {
         Authorization: `Bearer ${credentials.esaToken}`,
       }),
     };
-
     return this.http.post(`${credentials.esaApiEndPoint}/v1/teams/${credentials.esaTeamName}/posts`, esaPostBody, httpOptions);
   }
 

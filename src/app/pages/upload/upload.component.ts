@@ -19,6 +19,6 @@ export class UploadComponent implements OnInit {
   ngOnInit() {}
 
   async onClickedUploadButton() {
-    const response = await this.uploadUsecase.uploadReport(this.uploadReportFormGroup.value.reportText).toPromise();
+    await this.uploadUsecase.uploadReport(this.uploadReportFormGroup.value.reportText).toPromise();
   }
 }
