@@ -9,6 +9,6 @@ export class UploadPostUsecase {
   constructor(private uploadRepository: UploadReportRepository) {}
 
   uploadReport(markdown: string): Observable<any> {
-    return this.uploadRepository.post(markdown);
+    return this.uploadRepository.postToEsa(markdown);
   }
 }
