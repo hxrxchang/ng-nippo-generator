@@ -11,7 +11,7 @@ import { esaApiEndPoint, teamName, authorName, tokens } from 'credential';
 export class UploadReportRepository {
   constructor(private http: HttpClient) {}
 
-  post(markdown: string): Observable<any> {
+  postToEsa(markdown: string): Observable<any> {
     const esaPostBody = {
       post: {
         name: authorName,
