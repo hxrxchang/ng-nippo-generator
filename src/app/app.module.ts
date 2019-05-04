@@ -11,10 +11,12 @@ import { UploadComponent } from './pages/upload/upload.component';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { DisplayReportComponent } from './components/display-report/display-report.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NoSanitizePipe } from './pipes/no-sanitize.pipe';
 
 @NgModule({
-  declarations: [AppComponent, UploadComponent, UploadFormComponent, DisplayReportComponent, HeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, ReactiveFormsModule],
+  declarations: [AppComponent, UploadComponent, UploadFormComponent, DisplayReportComponent, HeaderComponent, NoSanitizePipe],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

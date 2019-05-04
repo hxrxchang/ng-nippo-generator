@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DisplayReportComponent } from './display-report.component';
+import { NoSanitizePipe } from './../../pipes/no-sanitize.pipe';
 
 describe('DisplayReportComponent', () => {
   let component: DisplayReportComponent;
@@ -8,7 +9,7 @@ describe('DisplayReportComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DisplayReportComponent],
+      declarations: [DisplayReportComponent, NoSanitizePipe],
     }).compileComponents();
   }));
 
@@ -29,18 +30,8 @@ describe('DisplayReportComponent', () => {
       expect(component.markedText).toContain('<h1 id="this-is-h1-text">this is h1 text</h1>');
     });
 
-    it('when reportText is empty and HTML is not rendered', () => {
+    it('when reportText is empty', () => {
       component.reportText = '';
-      component.isFirstRenderHTML = true;
-      component.ngOnChanges();
-      expect(component.markedText).toContain(
-        '<h1 id="お気持ち">お気持ち</h1>\n<h1 id="今日やったこと">今日やったこと</h1>\n<h1 id="明日次回やること">明日(次回)やること</h1>',
-      );
-    });
-
-    it('when reportText is empty and HTML is already rendered', () => {
-      component.reportText = '';
-      component.isFirstRenderHTML = false;
       component.ngOnChanges();
       expect(component.markedText).toEqual('');
     });
