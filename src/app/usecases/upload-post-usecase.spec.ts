@@ -21,8 +21,10 @@ describe('UploadPostUsecase', () => {
 
   it('call uploadReport() method', () => {
     const markdown = '# this is test';
-    spyOn(repository, 'post');
+    spyOn(repository, 'postToEsa');
+    spyOn(repository, 'postToSlack');
     usecase.uploadReport(markdown);
-    expect(repository.post).toHaveBeenCalledWith(markdown);
+    expect(repository.postToEsa).toHaveBeenCalledWith(markdown);
+    expect(repository.postToSlack).toHaveBeenCalledWith(markdown);
   });
 });

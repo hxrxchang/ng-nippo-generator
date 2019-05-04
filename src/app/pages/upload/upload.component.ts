@@ -3,8 +3,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { reportTemplate } from './../../domains/report-domain';
 import { UploadPostUsecase } from 'src/app/usecases/upload-post-usecase';
 
-import { take } from 'rxjs/operators';
-
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',

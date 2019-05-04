@@ -1,4 +1,7 @@
-export interface Tokens {
+export interface Credentials {
   esaToken: string;
-  slackToken: string;
+  slackWebHookUrl: string;
+  esaApiEndPoint: string;
+  esaTeamName: 'classi';
+  esaAuthorName: 'yuto_hara';
 }
