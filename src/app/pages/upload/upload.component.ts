@@ -3,8 +3,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { reportTemplate } from './../../domains/report-domain';
 import { UploadPostUsecase } from 'src/app/usecases/upload-post-usecase';
 
-import { take } from 'rxjs/operators';
-
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
@@ -21,6 +19,6 @@ export class UploadComponent implements OnInit {
   ngOnInit() {}
 
   async onClickedUploadButton() {
-    await this.uploadUsecase.uploadReport(this.uploadReportFormGroup.value.reportText).toPromise();
+    const response = await this.uploadUsecase.uploadReport(this.uploadReportFormGroup.value.reportText).toPromise();
   }
 }
