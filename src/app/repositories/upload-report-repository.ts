@@ -30,4 +30,9 @@ export class UploadReportRepository {
 
     return this.http.post(`${esaApiEndPoint}/v1/teams/${teamName}/posts`, esaPostBody, httpOptions);
   }
+
+  postToSlack(markdown: string): Observable<any> {
+    const arrangedMarkdown = '```\n\n' + markdown + '\n\n```';
+    return this.http.post(tokens.slackWebHookUrl, { text: arrangedMarkdown }, { responseType: 'text' });
+  }
 }
