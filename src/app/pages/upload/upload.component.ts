@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 import { reportTemplate } from './../../domains/report-domain';
 import { UploadPostUsecase } from 'src/app/usecases/upload-post-usecase';
 
