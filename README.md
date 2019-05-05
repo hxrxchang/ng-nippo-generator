@@ -44,3 +44,7 @@ about esa API, slack incoming webhook, please refer below.
 ```
 $ yarn start
 ```
+
+### CORS error
+
+To resolve CORS error, please enable [this chrome extension](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-app-launcher-info-dialog).
