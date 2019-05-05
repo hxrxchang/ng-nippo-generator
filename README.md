@@ -1,27 +1,46 @@
-# NippoGenerator
+# ng-nippo-generator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+This application enables you to post a daily report to your slack channel and [esa](https://esa.io/) at the same time.
 
-## Development server
+## Usage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### clone
 
-## Code scaffolding
+```
+$ git clone https://github.com/hxrxchang/ng-nippo-generator.git
+$ cd ng-nippo-generator
+$ yarn
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### set credential.ts
 
-## Build
+```
+$ touch credential.ts
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+in credential.ts, describe esa token, slack webhook url etc.
 
-## Running unit tests
+```
+// credential.ts
+import { Credentials } from 'src/app/domains/report-models';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+export const credentials: Credentials = {
+  esaToken: [your esa token],
 
-## Running end-to-end tests
+  slackWebHookUrl: [your slack webook url],
+  esaApiEndPoint: 'https://api.esa.io',
+  esaTeamName: [your esa team name],
+  esaAuthorName:  [your name],
+};
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+about esa API, slack incoming webhook, please refer below.
 
-## Further help
+- https://docs.esa.io/posts/102
+- https://api.slack.com/incoming-webhooks
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## start
+
+```
+$ yarn start
+```
