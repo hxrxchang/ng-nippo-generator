@@ -2,6 +2,7 @@ import { UploadPostUsecase } from './upload-post-usecase';
 import { TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadReportRepository } from '../repositories/upload-report-repository';
+import { MaterialModule } from '../material/material.module';
 
 describe('UploadPostUsecase', () => {
   let usecase: UploadPostUsecase;
@@ -9,7 +10,7 @@ describe('UploadPostUsecase', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, MaterialModule],
     });
     usecase = TestBed.get(UploadPostUsecase);
     repository = TestBed.get(UploadReportRepository);
