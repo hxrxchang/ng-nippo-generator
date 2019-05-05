@@ -4,6 +4,7 @@ import { UploadComponent } from './upload.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadPostUsecase } from 'src/app/usecases/upload-post-usecase';
+import { MaterialModule } from 'src/app/material/material.module';
 
 describe('UploadComponent', () => {
   let component: UploadComponent;
@@ -12,7 +13,7 @@ describe('UploadComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, MaterialModule],
       declarations: [UploadComponent],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
