@@ -22,7 +22,8 @@ export class UploadPostUsecase {
           },
         });
       }),
-      catchError(() => {
+      catchError((err) => {
+        console.log(err);
         this.matDialog.open(DialogComponent, {
           width: '50vw',
           data: {
